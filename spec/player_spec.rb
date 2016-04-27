@@ -5,21 +5,14 @@ describe Player do
   let(:opponent) { spy(:player) }
 
 	describe "#name" do
-		it "returns the name" do
+		it "Returns the name" do
 			expect(player.name).to eq "Dave"
 		end
 	end
 
-  describe "#attack" do
-    it "reduce opponent\'s HP" do
-      player.attack(opponent)
-      expect(opponent).to have_received(:reduce_hp).with(Player::DEFAULT_ATTACK)
-    end
-  end
-
-  describe "#reduce_hp" do
-    it "reduces player\'s own hp" do
-      player.reduce_hp(10)
+  describe "#receive_damage" do
+    it "Reduces player\'s own hp" do
+      player.receive_damage(10)
       expect(player.hp).to eq(Player::MAXIMUM_HP - 10)
     end
   end

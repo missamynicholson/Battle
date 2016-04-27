@@ -1,8 +1,8 @@
 require 'spec_helper.rb'
 
-feature "entering player names" do
+feature "Entering player names:" do
 
-  scenario "when players start new game" do
+  scenario "Players start a new game" do
     sign_in_and_play
     expect(page).to have_text("Sergio vs. cat")
   end
