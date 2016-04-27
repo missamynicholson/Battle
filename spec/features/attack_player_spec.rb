@@ -8,3 +8,13 @@ feature 'Attack other player' do
   end
 end 
 
+feature 'Attack reduces Hit Points' do 
+  scenario "Player 1's attack reduces Player 2's HP" do 
+    sign_in_and_play
+    attack
+    expect(page).to have_content("Chris's HP reduced to 90!")
+    expect(page).not_to have_content("Chris's HP reduced to 100!")
+  end
+
+end
+

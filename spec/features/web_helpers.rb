@@ -8,3 +8,7 @@ end
 def attack
   click_button('Attack!')
 end
+
+def hit_points
+  
+end
