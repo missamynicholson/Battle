@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  subject(:player){described_class.new(name:"Player_1")}
+  subject(:player){described_class.new(name:"Player_1", hitpoints: 50)}
 
   it 'returns the name of the player' do
     sign_in_and_play

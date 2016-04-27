@@ -1,5 +1,3 @@
-require 'spec_helper.rb'
-
 feature "start a fight" do
   scenario "User start a game" do
     sign_in_and_play
