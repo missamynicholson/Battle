@@ -4,27 +4,20 @@ describe Player do
   subject(:ben) { Player.new('Ben')}
   subject(:chris) { Player.new('Chris')}
 
-  describe '#name' do 
+  describe '#name' do
     it "returns its name" do
       expect(ben.name).to eq 'Ben'
     end
   end
 
-  describe '#hit_points' do 
-    it "returns the hit points" do 
+  describe '#hit_points' do
+    it "returns the hit points" do
       expect(ben.hit_points).to eq described_class::STARTING_HP
     end
   end
 
-  describe '#attack' do 
-    it "damages the other player" do 
-      expect(chris).to receive(:lose_hit_points)
-      ben.attack(chris)
-    end 
-  end
-
-  describe '#lose_hit_points' do 
-    it "reduces the other players's hit points" do 
+  describe '#lose_hit_points' do
+    it "reduces the other players's hit points" do
       expect {ben.lose_hit_points}.to change { ben.hit_points }.by(-10)
     end
   end

@@ -3,15 +3,15 @@ require 'spec_helper'
 feature 'Attack other player' do
   scenario "Player 1 can attack Player 2" do
     sign_in_and_play
-    attack
+    click_button('Attack!')
     expect(page).to have_content("Ben attacked Chris!")
   end
-end 
+end
 
-feature 'Attack reduces Hit Points' do 
-  scenario "Player 1's attack reduces Player 2's HP" do 
+feature 'Attack reduces Hit Points' do
+  scenario "Player 1's attack reduces Player 2's HP" do
     sign_in_and_play
-    attack
+    click_button('Attack!')
     expect(page).to have_content("Chris's HP reduced to 90!")
     expect(page).not_to have_content("Chris's HP reduced to 100!")
   end
