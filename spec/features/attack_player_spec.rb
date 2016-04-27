@@ -7,3 +7,4 @@ feature 'Attack other player' do
     expect(page).to have_content("Ben attacked Chris!")
   end
 end 
+
