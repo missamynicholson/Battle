@@ -2,6 +2,7 @@ class Player
 
   DEFAULT_ATTACK = 10
   MAXIMUM_HP = 100
+	
 	attr_reader :name, :hp
 
 	def initialize(name)
