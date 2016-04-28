@@ -7,21 +7,21 @@ describe Game do
 
   describe '#player_1' do
     it 'retrieves the first player' do
-      expect(game.player_1).to eq player_1
+      expect(game.players[0]).to eq player_1
     end
   end
 
   describe '#attack' do
     it 'can attack a player' do
-      expect(player_1).to receive :attacked
-      game.attack(player_1)
+      expect(player_2).to receive :attacked
+      game.attack
     end
   end
 
   describe '#switch_roles' do
     it 'switches the role of player_1 and player_2' do
       game.switch_roles
-      expect(game.player_1).to eq player_2
+      expect(game.players[0]).to eq player_2
     end
   end
 end

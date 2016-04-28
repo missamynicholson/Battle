@@ -1,2 +1,3 @@
-<h1><%=@game.player_1.name%> attacked <%=@game.player_2.name%></h1>
-<h1><%=@game.player_2.name%>: <%=@game.player_2.hitpoints%>HP</h1>
+<h1><%=@game.players[0].name%> attacked <%=@game.players[1].name%></h1>
+<h1><%=@game.players[1].name%>: <%=@game.players[1].hitpoints%>HP</h1>
+<a href="/switch">Switch</a>

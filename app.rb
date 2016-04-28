@@ -15,6 +15,12 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  get '/switch' do
+    @game = $game
+    @game.switch_roles
+    erb(:play)
+  end
+
   get '/play' do
     @game = $game
     erb(:play)
@@ -22,7 +28,7 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    $game.attack(@game.player_2)
+    $game.attack
     erb(:attack)
   end
 
