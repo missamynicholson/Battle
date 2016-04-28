@@ -6,8 +6,6 @@ describe Game do
   let(:player1)   { double :player1 }
   let(:player2)   { double :player2 }
 
-  # let(:players)   {[player1, player2]}
-
   describe 'player 1' do
     it "gets player 1" do
       expect(game.players[0]).to eq player1

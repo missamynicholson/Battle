@@ -15,10 +15,10 @@ end
 feature "Attack updates HP's for P2" do
   scenario "Player 1 can see Player 2's Hit Points" do
     sign_in_and_play
-    click_button('Attack!')
-    click_button('Switch')
-    click_button('Attack!')
-    click_button('Switch')
+    attack
+    switch
+    attack
+    switch
     expect(page).to have_content("Amy has 90 Hit Points")
   end
 end
