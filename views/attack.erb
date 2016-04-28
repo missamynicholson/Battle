@@ -1,3 +1,8 @@
 <h1><%=@game.players[0].name%> attacked <%=@game.players[1].name%></h1>
 <h1><%=@game.players[1].name%>: <%=@game.players[1].hitpoints%>HP</h1>
+
+<% if @game.players[1].hitpoints < 1 %>
+<h1>Sorry <%=@game.players[1].name%>, you've lost.</h1>
+<%else%>
 <a href="/switch">Switch</a>
+<%end%>
