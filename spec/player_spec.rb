@@ -14,11 +14,6 @@ describe Player do
     expect(player_1.hitpoints).to eq Player::HITPOINTS_START
   end
 
-  it 'can attack a player' do
-    expect(player_2).to receive :attacked
-    player_1.attack(player_2)
-  end
-
   it 'reduces the hitpoints by 10' do
     expect{player_2.attacked}.to change {player_2.hitpoints}.by(-10)
   end
