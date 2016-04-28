@@ -4,7 +4,7 @@ feature 'Attack other player' do
   scenario "Player 1 can attack Player 2" do
     sign_in_and_play
     click_button('Attack!')
-    expect(page).to have_content("Ben attacked Chris!")
+    expect(page).to have_content("Amy attacked Chris!")
   end
 end
 
@@ -17,4 +17,3 @@ feature 'Attack reduces Hit Points' do
   end
 
 end
-
