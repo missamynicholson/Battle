@@ -1,16 +1,16 @@
 class Player
-	
-	MAXIMUM_HP = 100
 
-	attr_reader :name, :hp
+  DEFAULT_HIT_POINTS = 60
+  
+  attr_reader :name, :hit_points
 
-	def initialize(name)
-		@name = name
-    @hp = MAXIMUM_HP
-	end
+  def initialize(name)
+    @name = name
+    @hit_points = DEFAULT_HIT_POINTS
+  end
 
-	def receive_damage(points)
-		@hp -= points
-	end
+  def receive_damage(points)
+    @hit_points -= points
+  end
 
 end

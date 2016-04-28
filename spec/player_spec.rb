@@ -1,19 +1,24 @@
 require 'player'
 
 describe Player do
-	subject(:player) { described_class.new("Dave") }
-  let(:opponent) { spy(:player) }
+  subject(:dave) { Player.new('Dave') }
+  subject(:mittens) { Player.new('Mittens')}
 
-	describe "#name" do
-		it "Returns the name" do
-			expect(player.name).to eq "Dave"
-		end
-	end
+  describe '#name' do
+    it 'Returns the name' do
+      expect(dave.name).to eq 'Dave'
+    end
+  end
 
-  describe "#receive_damage" do
-    it "Reduces player\'s own hp" do
-      player.receive_damage(10)
-      expect(player.hp).to eq(Player::MAXIMUM_HP - 10)
+  describe '#hit_points' do
+    it 'Returns the hit points' do
+    expect(dave.hit_points).to eq described_class::DEFAULT_HIT_POINTS
+    end
+  end
+
+  describe '#receive_damage' do
+    it 'Reduces the hit points in a certain amount' do
+      expect { dave.receive_damage(10) }.to change { dave.hit_points }.by(-10)
     end
   end
 
