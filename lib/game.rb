@@ -10,4 +10,8 @@ class Game
   def attack(player)
     player.attacked
   end
+
+  def switch_roles
+
+  end
 end

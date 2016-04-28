@@ -18,4 +18,10 @@ describe Game do
     end
   end
 
+  describe '#switch_roles' do
+    it 'switches the role of player_1 and player_2' do
+      game.switch_roles
+      expect(game.player_1).to eq player_2
+    end
+  end
 end
