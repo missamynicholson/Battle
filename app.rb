@@ -3,7 +3,7 @@ require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
-  
+
   enable :sessions
 
   # This is a sinatra filter (@game is used in every route)
@@ -12,6 +12,11 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
+    erb :select_mode
+  end
+
+  get '/select' do
+    @mode = params[:mode]
     erb :index
   end
 
@@ -23,6 +28,7 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
+    redirect '/attack' if @game.current_player.name == "Computer"
     erb :play
   end
 
