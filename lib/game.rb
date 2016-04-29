@@ -2,15 +2,16 @@ class Game
 
   attr_reader :player_1, :player_2, :current_player, :opponent
 
-  def initialize(player_1, player_2)
+  def initialize(player_1, player_2, attack)
   	@player_1 = player_1
   	@player_2 = player_2
     @current_player = player_1
     @opponent = player_2
+    @attack = attack
   end
 
-  def self.create(player_1, player_2)
-  	@game = Game.new(player_1, player_2)
+  def self.create(player_1, player_2, attack)
+  	@game = Game.new(player_1, player_2, attack)
   end
 
   def self.instance
@@ -18,7 +19,7 @@ class Game
   end
 
   def attack
-    @opponent.receive_damage(Kernel.rand(1..10))
+    @attack.new(@opponent).default
   end
 
   def switcher

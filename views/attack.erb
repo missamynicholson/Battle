@@ -1,6 +1,6 @@
 <h3><%= @game.opponent.name %> attacked <%= @game.current_player.name %></h3>
-<h3><%= @game.opponent.name %>:<%= @game.opponent.hit_points %>HPs</h3>
-<h3><%= @game.current_player.name %>:<%= @game.current_player.hit_points %>HPs</h3>
+<h3><%= @game.opponent.name %>: <%= @game.opponent.hit_points %>HPs</h3>
+<h3><%= @game.current_player.name %>: <%= @game.current_player.hit_points %>HPs</h3>
 
 <form action="/play">
   <input type="submit" value="OK">
