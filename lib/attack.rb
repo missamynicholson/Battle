@@ -5,15 +5,13 @@ class Attack
 	def initialize(opponent)
 		@opponent = opponent
 	end
-	
+
 	def default
 		opponent.receive_damage(Kernel.rand(1..10))
 	end
 
-	def sleep
-	end
-
-	def paralise
+	def paralyse
+		opponent.paralyse if Kernel.rand(1..10) >= 7
 	end
 
 	def poison

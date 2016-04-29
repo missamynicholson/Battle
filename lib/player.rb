@@ -7,6 +7,7 @@ class Player
   def initialize(name)
     @name = name
     @hit_points = DEFAULT_HIT_POINTS
+    @paralysed = false
   end
 
   def receive_damage(points)
@@ -16,5 +17,21 @@ class Player
   def computer?
     name == "Computer"
   end
+
+  def paralyse
+    @paralysed = true
+  end
+
+  def unparalyse
+    @paralysed = false
+  end
+
+  def paralysed?
+    paralysed
+  end
+
+  private
+  attr_reader :paralysed
+
 
 end

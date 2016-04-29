@@ -18,8 +18,8 @@ class Game
   	@game
   end
 
-  def attack
-    @attack.new(@opponent).default
+  def attack(method_of_attack)
+    eval("@attack.new(@opponent).#{method_of_attack}")
   end
 
   def switcher

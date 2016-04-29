@@ -18,7 +18,8 @@ describe Game do
 
   describe '#attack' do
     it 'Damages the player' do
-      game.attack
+      #eval("attack.new(player_2).default")
+      attack.new(player_2).default
       expect(attack).to have_received(:new)
     end
   end

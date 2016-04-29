@@ -34,10 +34,24 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @game.attack
+    type_of_attack = params[:which button]
+    @game.attack("default")
     @game.switcher
     redirect '/game_over' if @game.game_over?
     erb :attack
+  end
+
+  get '/unparalyse' do
+    @game.current_player.unparalyse
+    erb :play
+  end
+
+  get '/sleep' do
+    erb :sleep
+  end
+
+  get '/paralyse' do
+    erb :paralyse
   end
 
   get '/game_over' do

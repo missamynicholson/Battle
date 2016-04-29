@@ -1,0 +1,9 @@
+<%if @game.opponent.paralysed?%>
+  <h3><%= @game.opponent.name %> has been paralysed by <%= @game.current_player.name %></h3>
+<%else%>
+  <h3><%= @game.opponent.name %> has not been paralysed by <%= @game.current_player.name %></h3>
+<%end%>
+
+<form action="/unparalyse">
+  <input type="submit" value="OK">
+</form>
