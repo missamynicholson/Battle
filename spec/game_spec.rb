@@ -1,11 +1,11 @@
 require 'game'
 
 describe Game do
-  subject(:game){described_class.new(player_1: player_1, player_2: player_2)}
+  subject(:game){described_class.create(player_1: player_1, player_2: player_2)}
   let(:player_1) {double :player_1, hitpoints: 50}
   let(:player_2) {double :player_2, hitpoints: 50}
   let(:player_lost) {double :player_lost, hitpoints: 0}
-  let(:game_over){described_class.new(player_1: player_1, player_2: player_lost)}
+  let(:game_over){described_class.create(player_1: player_1, player_2: player_lost)}
 
   describe '#player_1' do
     it 'retrieves the first player' do
