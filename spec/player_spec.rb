@@ -20,6 +20,7 @@ describe Player do
 
   describe '#reduces hitpoints when attacked' do
     it 'reduces the hitpoints by 10' do
+      allow(Kernel).to receive(:rand) {10}
       expect{player_2.attacked}.to change {player_2.hitpoints}.by(-10)
     end
   end

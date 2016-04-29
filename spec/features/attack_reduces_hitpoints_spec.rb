@@ -1,5 +1,6 @@
 feature "Attack reduces hitpoints" do
   scenario "Player 2's hps reduce by 10 when attacked" do
+    allow(Kernel).to receive(:rand) {10}
     sign_in_and_play
     click_link('Attack')
     expect(page).not_to have_content("Player_2: 50HP")
@@ -7,6 +8,7 @@ feature "Attack reduces hitpoints" do
   end
 
   scenario "Player 1's hps reduce by 10 when attacked" do
+    allow(Kernel).to receive(:rand) {10}
     sign_in_and_play
     attack_and_switch
     attack_and_switch

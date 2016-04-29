@@ -8,6 +8,6 @@ class Player
   end
 
   def attacked
-    @hitpoints -= 10
+    @hitpoints -= Kernel.rand(1..10)
   end
 end

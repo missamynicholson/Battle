@@ -11,7 +11,7 @@ class Game
   end
 
   def self.instance
-    @game
+    @games
   end
 
   def attack
