@@ -11,7 +11,7 @@ class Game
   end
 
   def self.instance
-    @games
+    @game
   end
 
   def attack
@@ -23,10 +23,10 @@ class Game
   end
 
   def game_over?
-    players[1].hitpoints == 0 || players[0].hitpoints == 0
+    players[1].hitpoints <= 0 || players[0].hitpoints <= 0
   end
 
   def loser
-    players.each {|player| return player if player.hitpoints == 0}
+    players.each {|player| return player if player.hitpoints <= 0}
   end
 end
